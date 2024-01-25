@@ -8,7 +8,7 @@
 #include <cstring>
 #
 #include <iostream>
-using namespace std;
+using namespace std; // = std::
 
 int main(int argc, const char **argv) { //argv[][]
     //std::cout << argv[0] << endl;
@@ -16,26 +16,26 @@ int main(int argc, const char **argv) { //argv[][]
     
     // Bing AI:
     if (argc != 2) {
-        std::cerr << "Bitte nur ein Argument mitgeben" << std::endl;
+        cerr << "Bitte nur ein Argument mitgeben" << endl;
         //return 1;
         return EXIT_FAILURE;
     }
 
-    std::string text = argv[1];
-    
-    std::string border = "+";
+    string text = argv[1];
+
+    string border = "+";
     for (int i = 0; i < 78; i++) {
         border += "-";
     }
     border += "+";
 
-    std::cout << border << std::endl;
-    std::cout << "| " << text;
+    cout << border << endl;
+    cout << "| " << text;
     for (int i = 0; i < 77 - text.length(); i++) {
-        std::cout << " ";
+        cout << " ";
     }
-    std::cout << "|" << std::endl;
-    std::cout << border << std::endl;
+    cout << "|" << endl;
+    cout << border << endl;
 
 
     /*
