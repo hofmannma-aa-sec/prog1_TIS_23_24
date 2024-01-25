@@ -22,7 +22,7 @@ int main(int argc, const char **argv) { //argv[][]
     }
 
     std::string text = argv[1];
-
+    
     std::string border = "+";
     for (int i = 0; i < 78; i++) {
         border += "-";
