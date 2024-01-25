@@ -60,20 +60,19 @@ void Bing_command_block(const char** argv)
     border += "+";
 
     cout << border << endl;
-    //cout << "| " << text;
-    //string* b;
+
     if(text.length() > 77)
     {
-        //cout << "if Treu" << endl;
         int nullst = 0;
-        for (int a = 0; a < (text.length() / 77) ; a++)
+        int cut = 77; 
+        for (int i = 0; i < (text.length() / 77) ; i++)
         {
-
-            cout << "| " << text.substr(nullst,nullst += 77) << "|" << endl;
-            cout << nullst << endl;
+            // todo: Bug suchen bei i > 1 
+            cout << "| " << text.substr(nullst, cut) << "|" << endl;
+            nullst = nullst + cut;
 
         }
-        cout << "| " << text.substr(nullst,nullst += (text.length() % 77));
+        cout << "| " << text.substr(nullst, nullst + (text.length() % 77));
         for (int i = 0; i < 77 - (text.length() % 77); i++) {
             cout << " ";
         }

@@ -9,7 +9,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/commandblock",
-            "args": ["Hallo"],
+            "args": ["Hallovmälkfdsmvdmvädsmvöldmväafäejgüoiejrgüoierjdjfdsajlkfdkfkdsajfkdakfkdjfödsfkafjjdadndsadnsmsdjdjsjjsjsjehudiaiduiaiudiadiuaduuiaduiaudiuüofdskkkfskäfkskäkfdsärk+oerif+orewiüoifkepfokdsfdsksdkölskfälkflskoerfor"],
             "stopAtEntry": true,
             "cwd": "${fileDirname}",
             "environment": [],
