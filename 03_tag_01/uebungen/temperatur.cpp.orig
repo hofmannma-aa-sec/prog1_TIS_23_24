@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+// Globale Konstante Variabeln für init von Celsius und farenheit  
+const int cel = {50};
+const int far = {50};
+int main(int argc, char const *argv[])
+{   
+
+    //  initaliesierungsklammern {}
+    //  Konstante Variabeln für init von Celsius und farenheit    
+    //  const int cel = {50};
+    //  const int far = {50};
+    //  Variabeln für output von Celsius und farenheit
+
+    int c_cel = {0};
+    int c_far = {0};
+    //  Konvertierung von Celsius und Farenheit
+    c_cel = (far - 32) * 5 / 9;
+    c_far = cel * 1.8 + 32;
+
+    cout << "Farenheit in Celsius: " << c_cel << endl;
+    cout << "Celsius in Farenheit: " << c_far << endl;
+    return 0;
+}

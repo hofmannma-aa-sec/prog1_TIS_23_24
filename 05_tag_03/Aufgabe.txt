@@ -1,0 +1,82 @@
+Heute im Unterricht erarbeiten wir ein Programm von der Pike auf.
+Nach jedem Teilschritt wird ein Unterrichtsblock folgen.
+Was nicht im Unterricht fertig wird bitte zu Hause vervollständigen.
+
+Aufgabe
+-------
+
+Erstellen Sie ein Programm das aus der Kommandozeile einen Text einliest und dann in eime Kommentarblock ausgibt.
+
+- Der Text soll linkszentriert sein mit einem Zeichen Abstand
+- Die Begrenzungszeichen sind pipe, +, - für den Block
+- Der Block soll in 80 Zeichen rein passen
+
+Das Programm soll commentblock(.exe) heissen.
+
+Beispielaufruf
+--------------
+
+UNIX ->    commentblock 'Heute ist der dritte Unterrichtstag im Fach Programmieren'
+Windows -> commentblock.exe "Heute ist der dritte Unterrichtstag im Fach Programmieren"
+
++-----------------------------------------------------------------------------+
+| Heute ist der dritte Unterrichtstag im Fach Programmieren                   |
++-----------------------------------------------------------------------------+
+
+Detaillierte Aufgaben
+---------------------
+
+(1) Verändern Sie die bereit gestellt Entwicklungsumgebung so dass helloworld in commentblock geändert wird. Beachten Sie dass das auch Auswirkungen auf config.h.in hat
+(2) Verändern Sie den main Aufruf so, dass Sie aus der Konsole einen Text per Option einlesen können
+ - int main(const int argc, const char **argv)
+(3) Drucken Sie den Text zum test mit cout (siehe Beispielaufruf) aus
+ - argv muss jetzt mit cout kombiniert werden
+(4) Machen Sie sich Gedanken wieviel Speicher sie aus dem Heap bestellen müssen um 3*80 Zeichen unter zu bringen
+ - Denken Sie auch an Endzeichen und neue Line
+ - Machen Sie sich Gedanken ob ein Leerzeichen gleich der Zahl 0 entspricht?
+(5) Bestellen Sie den Speicher aus dem Heap und geben Sie den Speicher am Ende wieder zurück
+ - Prüfen Sie den Speicher auch ob er Gültig ist
+(6) Belegen Sie den Speicher so vor, dass Sie einen Rahmen bekommen und diesen ausgeben können
+ - Machen Sie nun möglichst alle Berechnungen in konstanten int Werten un Enumeration
+(7) Drucken Sie den Text mit memcpy(..) an die richtige Stelle (bitte strlen auch berücksichtigen)
+ - Machen Sie Versuche was passiert wenn Sie z.B. mit größer 80 Zeichen den Text ausgeben wollen
+ 
+Fleissaufgabe (bitte zu Hause daran weiter arbeiten) um das Programmieren zu üben
+---------------------------------------------------------------------------------
+
+(8) Füllen Sie bei einem Überlauf (d.h. mehr als die Zeichen wo reinpassen) in den letzten 3 Zeichen die noch reinpassen mit '...'
+
++-----------------------------------------------------------------------------+
+| asgdaksfdkhafsdkafsdkfaskdfahagsfdagfsdagsfdagsasdasdasdasdasdasdasdasda... |
++-----------------------------------------------------------------------------+
+
+(9) Wie müsste eine Mittelzentrierung programmiert werden
+
++-----------------------------------------------------------------------------+
+|                                 Mittelpunkt                                 |
++-----------------------------------------------------------------------------+
+
+(10) Wie müsste das Programm verändert werden so dass am Anfang der Zeile ein Commentzeichen steht
+
+//+---------------------------------------------------------------------------+
+//| asgdaksfdkhafsdkafsdkfaskdfahagsfdagfsdagsfdagsasdasdasdasdasdasdasdas... |
+//+---------------------------------------------------------------------------+
+ 
+
+Anmerkung
+---------
+
+Library cstring -> memset, memcpy, strlen
+
+Mögliche Konstantennamen die hilfreich sind (alle vom type int oder enum)
+
+SIGN_PER_LINE
+START_ADDRESS_LINE01
+START_ADDRESS_LINE02
+START_OF_TEXT
+MAX_TEXT_LENGTH
+OVERFLOWPRINTPOSITION
+START_ADDRESS_LINE03
+TOTAL_BUFFER_SIZE
+
+
