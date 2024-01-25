@@ -10,18 +10,49 @@
 #include <iostream>
 using namespace std; // = std::
 
-int main(int argc, const char **argv) { //argv[][]
+void Bing_command_block(const char** argv);
+void Self_command_block(const char** argv);
+
+int main(int argc, const char** argv) { //argv[][]
     //std::cout << argv[0] << endl;
     //std::cout << argv[1] << endl;
     
-    // Bing AI:
     if (argc != 2) {
         cerr << "Bitte nur ein Argument mitgeben" << endl;
         //return 1;
         return EXIT_FAILURE;
     }
+    // Call Fuctions 
+    Bing_command_block(argv);
+    Self_command_block(argv);
 
+
+
+    /*
+    cout << "Hallowelt, und es folgt noch etwas mehr ..." << endl;
+
+    cout << "CMake gibt noch folgende Zusatzinformation mit:\n"
+         << "Version:      " << MAIN_VERSION_MAJOR << '.' << MAIN_VERSION_MINOR << '\n'
+         << "Beschreibung: " << MAIN_DESCRIPTION << endl;
+
+    */    
+
+
+    return EXIT_SUCCESS;
+}
+
+void Bing_command_block(const char** argv)
+{
+    /*
+    Diese Function wurde mit hilfe der Bing Ai erstellt
+    Die Function nutzt statt char pointer array die string klasse
+    Die std:string Klasse kapselt Zeichenarrays und biete nützliche Methoden zb append().
+    std:string kümmert sich selbst um Speicherverwaltung.
+    */
     string text = argv[1];
+    // Print text lengh
+    cout << "Text leange:" << endl;
+    cout << text.length() << endl;
 
     string border = "+";
     for (int i = 0; i < 78; i++) {
@@ -37,16 +68,4 @@ int main(int argc, const char **argv) { //argv[][]
     cout << "|" << endl;
     cout << border << endl;
 
-
-    /*
-    cout << "Hallowelt, und es folgt noch etwas mehr ..." << endl;
-
-    cout << "CMake gibt noch folgende Zusatzinformation mit:\n"
-         << "Version:      " << MAIN_VERSION_MAJOR << '.' << MAIN_VERSION_MINOR << '\n'
-         << "Beschreibung: " << MAIN_DESCRIPTION << endl;
-
-    */    
-
-
-    return EXIT_SUCCESS;
 }
