@@ -9,8 +9,8 @@
 #include <iostream>
 using namespace std; // = std::
 
-void Bing_command_block(const char** argv);
-void Self_command_block(const char** argv);
+void String_command_block(const char** argv);
+void No_string_command_block(const char** argv);
 
 int main(int argc, const char** argv) { //argv[][]
     //std::cout << argv[0] << endl;
@@ -22,8 +22,8 @@ int main(int argc, const char** argv) { //argv[][]
         return EXIT_FAILURE;
     }
     // Call Fuctions 
-    Bing_command_block(argv);
-    //Self_command_block(argv);
+    String_command_block(argv);
+    No_string_command_block(argv);
 
 
 
@@ -40,14 +40,14 @@ int main(int argc, const char** argv) { //argv[][]
     return EXIT_SUCCESS;
 }
 
-void Bing_command_block(const char** argv)
+void String_command_block(const char** argv)
 {
     /*
-    Diese Function wurde mit hilfe der Bing Ai erstellt
     Die Function nutzt statt char pointer array die string klasse
     Die std:string Klasse kapselt Zeichenarrays und biete nützliche Methoden zb append().
     std:string kümmert sich selbst um Speicherverwaltung.
     */
+    cout << "C++ und String Klasse" << endl;
     string text = argv[1];
     // Print text lengh
     cout << "Text leange:" << endl;
@@ -67,7 +67,8 @@ void Bing_command_block(const char** argv)
         int cut = 77; 
         for (int i = 0; i < (text.length() / 77) ; i++)
         {
-            // todo: Bug suchen bei i > 1 = range error 0 >> 77 != 77 >> 154
+
+            //cout << "| " << text.substr(nullst, cut).length() << "|" << endl;
             cout << "| " << text.substr(nullst, cut) << "|" << endl;
             nullst = nullst + cut;
 
@@ -89,12 +90,58 @@ void Bing_command_block(const char** argv)
     cout << border << endl;
 
 }
-void Self_command_block(char** argv)
+void No_string_command_block(const char** argv)
 {
     /*
     Das ist die selbst geschrieben Command Block Function
     Diese verwendet für die Umsetzung nicht die String Klasse 
     */
-
-
+    //char* border = "+";
+    // Speicher resevieren
+    char* border = new char[80];
+    char* text = new char[80];
+    const char* bp = new char[2];
+    const char* bm = new char[2];
+    memset(border, 0, 80);
+    //border = "";
+    bp = "+";
+    bm = "-";
+    cout << strlen(border) << endl;
+    strcat(border, bp);
+    cout << strlen(border) << endl;
+    for (int i = 0; i < 78; i++) {
+        strcat(border, bm);
+    }
+    strcat(border, bp);
+    cout << strlen(argv[1]) << endl;
+    cout << border << endl;
+    if (strlen(argv[1]) > 77)
+    {
+        strcat(text, argv[1]);
+        for (int i = 0; i < (strlen(argv[1]) / 77); i++)
+        {
+            //cout << "| " text
+        }
+        for (int i = 0; i < (strlen(argv[1]) % 77); i++)
+        {
+            /* code */
+        }
+        
+        
+    }
+    else
+    {
+        strcat(text, argv[1]);
+        for (int i = 0; i < 77 - strlen(argv[1]); i++)
+        {
+            strcat(text, " ");
+        }
+        
+        cout << "| " << text << "|" << endl;
+    }
+    cout << strlen(border) << endl;
+    cout << border << endl;
+    delete[] border;
+    delete[] text;
+    //delete[] bm;
 }
