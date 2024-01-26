@@ -67,7 +67,7 @@ void Bing_command_block(const char** argv)
         int cut = 77; 
         for (int i = 0; i < (text.length() / 77) ; i++)
         {
-            // todo: Bug suchen bei i > 1 
+            // todo: Bug suchen bei i > 1 = range error 0 >> 77 != 77 >> 154
             cout << "| " << text.substr(nullst, cut) << "|" << endl;
             nullst = nullst + cut;
 
