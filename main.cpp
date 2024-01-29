@@ -8,19 +8,21 @@
 #include <cstring>
 #include <iostream>
 // Konstanten
-#define SIGN_PER_LINE;
-#define START_ADDRESS_LINE01;
-#define START_ADDRESS_LINE02;
-#define START_OF_TEXT;
-#define MAX_TEXT_LENGTH;
-#define OVERFLOWPRINTPOSITION;
-#define START_ADDRESS_LINE03;
-#define TOTAL_BUFFER_SIZE;
+
+#define SIGN_PER_LINE = 0;
+#define START_ADDRESS_LINE01 = 0;
+#define START_ADDRESS_LINE02 = 0;
+#define START_OF_TEXT = 0;
+#define MAX_TEXT_LENGTH = 0;
+#define OVERFLOWPRINTPOSITION = 0;
+#define START_ADDRESS_LINE03 = 0;
+#define TOTAL_BUFFER_SIZE = 0;
+
 using namespace std; // = std::
 
-void String_command_block(const char** argv);
-void No_string_command_block(const char** argv);
-void No_string_overflow_command_block(const char** argv);
+void StringCommandBlock(const char** argv);
+void NoStringCommandBlock(const char** argv);
+void NoStringOverflowCommandBlock(const char** argv);
 
 int main(int argc, const char** argv) { //argv[][]
     //std::cout << argv[0] << endl;
@@ -35,9 +37,9 @@ int main(int argc, const char** argv) { //argv[][]
     Call Fuctions
     */
 
-    String_command_block(argv);
-    No_string_command_block(argv);
-    No_string_overflow_command_block(argv);
+    StringCommandBlock(argv);
+    NoStringCommandBlock(argv);
+    NoStringOverflowCommandBlock(argv);
 
 
     /*
@@ -53,7 +55,7 @@ int main(int argc, const char** argv) { //argv[][]
     return EXIT_SUCCESS;
 }
 
-void String_command_block(const char** argv)
+void StringCommandBlock(const char** argv)
 {
     /**
     * Die Function nutzt statt char pointer array die string klasse
@@ -62,7 +64,7 @@ void String_command_block(const char** argv)
     * std:string kümmert sich selbst um Speicherverwaltung.
     * @param argv Parameter der von der Kommandozeile übergeben wird. 
     **/
-    cout << "C++ und String Klasse" << endl;
+    cout << "StringCommandBlock" << endl;
     string text = argv[1];
     // Print text lengh
     cout << "Text leange:" << endl;
@@ -105,10 +107,10 @@ void String_command_block(const char** argv)
     cout << border << endl;
 
 }
-void No_string_command_block(const char** argv)
+void NoStringCommandBlock(const char** argv)
 {
     /**
-     * Diese verwendet für die Umsetzung des Command Blocks nicht die String Klasse.
+     * Diese Funktion verwendet für die Umsetzung des Command Blocks nicht die String Klasse.
      * Die Funktion splitted den String nach 80 Zeichen und und erweiterte die Box mit newlines. 
      * @param argv Parameter der von der Kommandozeile übergeben wird. 
     **/
@@ -122,14 +124,13 @@ void No_string_command_block(const char** argv)
     memset(text, 0, 80);
     bp = "+";
     bm = "-";
-    cout << strlen(border) << endl;
+    cout << "NoStringCommandBlock" << endl;
+
     strcat(border, bp);
-    cout << strlen(border) << endl;
     for (int i = 0; i < 78; i++) {
         strcat(border, bm);
     }
     strcat(border, bp);
-    cout << strlen(argv[1]) << endl;
     cout << border << endl;
     if (strlen(argv[1]) > 77)
     {
@@ -184,8 +185,14 @@ void No_string_command_block(const char** argv)
     delete[] border;
     delete[] text;
 }
-void No_string_overflow_command_block(const char** argv)
+void NoStringOverflowCommandBlock(const char** argv)
 {
+    /**
+     * Diese Funktion verwendet für die Umsetzung des Command Blocks nicht die String Klasse.
+     * Die Funktion splitted den String nach 80 Zeichen und und erweiterte die Box mit newlines. 
+     * @param argv Parameter der von der Kommandozeile übergeben wird. 
+    **/
+
     char* border = new char[80];
     char* text = new char[80];
     const char* bp = new char[2];
@@ -194,13 +201,13 @@ void No_string_overflow_command_block(const char** argv)
     memset(text, 0, 80);
     bp = "+";
     bm = "-";
-    cout << strlen(border) << endl;
     strcat(border, bp);
-    cout << strlen(border) << endl;
+    cout << "NoStringOverflowCommandBlock" << endl;
+
     for (int i = 0; i < 78; i++) {
         strcat(border, bm);
     }
     strcat(border, bp);
-    cout << strlen(argv[1]) << endl;
     cout << border << endl;
+
 }
