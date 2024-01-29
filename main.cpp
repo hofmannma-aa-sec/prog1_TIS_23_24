@@ -8,7 +8,7 @@
 #include <cstring>
 #include <iostream>
 // Konstanten
-
+/*
 #define SIGN_PER_LINE = 0;
 #define START_ADDRESS_LINE01 = 0;
 #define START_ADDRESS_LINE02 = 0;
@@ -17,12 +17,25 @@
 #define OVERFLOWPRINTPOSITION = 0;
 #define START_ADDRESS_LINE03 = 0;
 #define TOTAL_BUFFER_SIZE = 0;
-
+*/
 using namespace std; // = std::
 
 void StringCommandBlock(const char** argv);
 void NoStringCommandBlock(const char** argv);
 void NoStringOverflowCommandBlock(const char** argv);
+void VorlesungsCommandBlock(const char** argv);
+
+// Vorlesung Tag 4
+enum {
+    SIGN_PER_LINE = 01,
+    START_ADDRESS_LINE01 = 0,
+    START_ADDRESS_LINE02 = SIGN_PER_LINE,
+    START_OF_TEXT = 0,
+    MAX_TEXT_LENGTH = SIGN_PER_LINE - 2 - 2 - 1,
+    //OVERFLOWPRINTPOSITION = 0,
+    START_ADDRESS_LINE03 = SIGN_PER_LINE * 2,
+    TOTAL_BUFFER_SIZE = SIGN_PER_LINE * 3
+};
 
 int main(int argc, const char** argv) { //argv[][]
     //std::cout << argv[0] << endl;
@@ -40,7 +53,7 @@ int main(int argc, const char** argv) { //argv[][]
     StringCommandBlock(argv);
     NoStringCommandBlock(argv);
     NoStringOverflowCommandBlock(argv);
-
+    VorlesungsCommandBlock(argv);
 
     /*
     cout << "Hallowelt, und es folgt noch etwas mehr ..." << endl;
@@ -209,5 +222,68 @@ void NoStringOverflowCommandBlock(const char** argv)
     }
     strcat(border, bp);
     cout << border << endl;
+    if (strlen(argv[1]) > 77)
+    {
+        for (int i = 0; i < 77; i++)
+        {
+            /* code */
+        }
+        
+    }
+    else
+    {
+        strcat(text, argv[1]);
+        for (int i = 0; i < 77 - strlen(argv[1]); i++)
+        {
+            strcat(text, " ");
+        }
+        
+        cout << "| " << text << "|" << endl;
+    }
+
+    
+
+}
+void VorlesungsCommandBlock(const char** argv)
+{
+    char* buffer = new char[TOTAL_BUFFER_SIZE];
+
+        if (!buffer) {
+            cerr << "Keins Speicher zu verfügung" << endl;
+
+            //return EXIT_FAILURE;
+        }
+
+        {
+            // Weise Leinwand
+            memset(buffer, ' ', TOTAL_BUFFER_SIZE);
+            *(buffer + TOTAL_BUFFER_SIZE - 1) = '\0';  
+        }
+        {
+            // Line 1
+            *(buffer + START_ADDRESS_LINE01) = '+'; 
+            memset(buffer + START_ADDRESS_LINE01 + 1, '-', SIGN_PER_LINE -2 -1);
+            *(buffer + START_ADDRESS_LINE01 + SIGN_PER_LINE -2) = '+';
+            *(buffer + START_ADDRESS_LINE01 + SIGN_PER_LINE -1) = '\n'; 
+
+        }
+
+        {
+            // Line 2
+            *(buffer + START_ADDRESS_LINE02) = '|'; 
+            *(buffer + START_ADDRESS_LINE01 + SIGN_PER_LINE -2) = '|';
+            *(buffer + START_ADDRESS_LINE01 + SIGN_PER_LINE -1) = '\n'; 
+        }
+
+        {
+            // line 3
+            memcpy(buffer + START_ADDRESS_LINE03, buffer + START_ADDRESS_LINE01, SIGN_PER_LINE - 1);
+        }
+        {
+            const int lengh = strlen(argv[1]);
+            const int reallengh 
+
+        }
+
 
 }
