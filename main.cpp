@@ -26,14 +26,15 @@ void NoStringOverflowCommandBlock(const char **argv);
 void VorlesungsCommandBlock(const char **argv);
 
 // Vorlesung Tag 4
+
 enum
 {
-    SIGN_PER_LINE = 01,
+    SIGN_PER_LINE = 81,
     START_ADDRESS_LINE01 = 0,
     START_ADDRESS_LINE02 = SIGN_PER_LINE,
-    START_OF_TEXT = 0,
+    START_OF_TEXT = START_ADDRESS_LINE02 + 2,
     MAX_TEXT_LENGTH = SIGN_PER_LINE - 2 - 2 - 1,
-    // OVERFLOWPRINTPOSITION = 0,
+    // OVERFLOWPRINTPOSITION,
     START_ADDRESS_LINE03 = SIGN_PER_LINE * 2,
     TOTAL_BUFFER_SIZE = SIGN_PER_LINE * 3
 };
@@ -49,23 +50,61 @@ int main(int argc, const char **argv)
         // return 1;
         return EXIT_FAILURE;
     }
-    /*
-    Call Fuctions
-    */
+    /**
+     * Call Fuctions
+     **/
 
     StringCommandBlock(argv);
     NoStringCommandBlock(argv);
-    NoStringOverflowCommandBlock(argv);
+    // NoStringOverflowCommandBlock(argv);
     VorlesungsCommandBlock(argv);
 
-    /*
-    cout << "Hallowelt, und es folgt noch etwas mehr ..." << endl;
+    /**
+     *
+     *
+     * Vorlesungs CommandBlock
+     *
+     *
+     **/
+    cout << "VorlesungsCommandBlock" << endl;
+    char *buffer = new char[TOTAL_BUFFER_SIZE];
+    if (!buffer)
+    {
+        cerr << "Kein Speicher mehr verfuegbar" << endl;
+        return EXIT_FAILURE;
+    }
+    {
+        // Weise Leinwand
+        memset(buffer, ' ', TOTAL_BUFFER_SIZE);
 
-    cout << "CMake gibt noch folgende Zusatzinformation mit:\n"
-         << "Version:      " << MAIN_VERSION_MAJOR << '.' << MAIN_VERSION_MINOR << '\n'
-         << "Beschreibung: " << MAIN_DESCRIPTION << endl;
+        *(buffer + TOTAL_BUFFER_SIZE - 1) = '\0';
+    }
+    {
+        // Linie 1
+        *(buffer + START_ADDRESS_LINE01) = '+';
+        memset(buffer + START_ADDRESS_LINE01 + 1, '-', SIGN_PER_LINE - 2 - 1);
+        *(buffer + START_ADDRESS_LINE01 + SIGN_PER_LINE - 2) = '+';
+        *(buffer + START_ADDRESS_LINE01 + SIGN_PER_LINE - 1) = '\n';
+    }
 
-    */
+    {
+        // Linie 2
+        *(buffer + START_ADDRESS_LINE02) = '|';
+        *(buffer + START_ADDRESS_LINE02 + SIGN_PER_LINE - 2) = '|';
+        *(buffer + START_ADDRESS_LINE02 + SIGN_PER_LINE - 1) = '\n';
+    }
+
+    {
+        // Linie 3
+        memcpy(buffer + START_ADDRESS_LINE03, buffer + START_ADDRESS_LINE01, SIGN_PER_LINE - 1);
+    }
+    {
+        const int length = strlen(argv[1]);
+        const int reallength = length > MAX_TEXT_LENGTH ? MAX_TEXT_LENGTH : length;
+        memcpy(buffer + START_OF_TEXT, argv[1], reallength);
+    }
+    cout << buffer << endl;
+    delete[] buffer, buffer = nullptr;
 
     return EXIT_SUCCESS;
 }
@@ -79,11 +118,11 @@ void StringCommandBlock(const char **argv)
      * std:string kümmert sich selbst um Speicherverwaltung.
      * @param argv Parameter der von der Kommandozeile übergeben wird.
      **/
-    cout << "StringCommandBlock" << endl;
+    cout << "FunctionStringCommandBlock" << endl;
     string text = argv[1];
     // Print text lengh
-    cout << "Text leange:" << endl;
-    cout << text.length() << endl;
+    //cout << "Text leange:" << endl;
+    //cout << text.length() << endl;
 
     string border = "+";
     for (int i = 0; i < 78; i++)
@@ -140,7 +179,7 @@ void NoStringCommandBlock(const char **argv)
     memset(text, 0, 80);
     bp = "+";
     bm = "-";
-    cout << "NoStringCommandBlock" << endl;
+    cout << "FunctionNoStringCommandBlock" << endl;
 
     strcat(border, bp);
     for (int i = 0; i < 78; i++)
@@ -216,7 +255,7 @@ void NoStringOverflowCommandBlock(const char **argv)
     bp = "+";
     bm = "-";
     strcat(border, bp);
-    cout << "NoStringOverflowCommandBlock" << endl;
+    cout << "FunctionNoStringOverflowCommandBlock" << endl;
 
     for (int i = 0; i < 78; i++)
     {
@@ -244,6 +283,12 @@ void NoStringOverflowCommandBlock(const char **argv)
 }
 void VorlesungsCommandBlock(const char **argv)
 {
+    /**
+     * Diese Funktion verwendet das Beispiel für die Umsetzung des Command Blocks aus der Vorlesung.
+     *
+     * @param argv Parameter der von der Kommandozeile übergeben wird.
+     **/
+    cout << "FunctionVorlesungsCommandBlock" << endl;
     char *buffer = new char[TOTAL_BUFFER_SIZE];
 
     if (!buffer)
@@ -252,36 +297,39 @@ void VorlesungsCommandBlock(const char **argv)
 
         // return EXIT_FAILURE;
     }
+    else
+    {
+        {
+            // Weise Leinwand
+            memset(buffer, ' ', TOTAL_BUFFER_SIZE);
 
-    {
-        // Weise Leinwand
-        memset(buffer, ' ', TOTAL_BUFFER_SIZE);
-        *(buffer + TOTAL_BUFFER_SIZE - 1) = '\0';
-    }
-    {
-        // Line 1
-        *(buffer + START_ADDRESS_LINE01) = '+';
-        memset(buffer + START_ADDRESS_LINE01 + 1, '-', SIGN_PER_LINE - 2 - 1);
-        *(buffer + START_ADDRESS_LINE01 + SIGN_PER_LINE - 2) = '+';
-        *(buffer + START_ADDRESS_LINE01 + SIGN_PER_LINE - 1) = '\n';
-    }
+            *(buffer + TOTAL_BUFFER_SIZE - 1) = '\0';
+        }
+        {
+            // Linie 1
+            *(buffer + START_ADDRESS_LINE01) = '+';
+            memset(buffer + START_ADDRESS_LINE01 + 1, '-', SIGN_PER_LINE - 2 - 1);
+            *(buffer + START_ADDRESS_LINE01 + SIGN_PER_LINE - 2) = '+';
+            *(buffer + START_ADDRESS_LINE01 + SIGN_PER_LINE - 1) = '\n';
+        }
 
-    {
-        // Line 2
-        *(buffer + START_ADDRESS_LINE02) = '|';
-        *(buffer + START_ADDRESS_LINE01 + SIGN_PER_LINE - 2) = '|';
-        *(buffer + START_ADDRESS_LINE01 + SIGN_PER_LINE - 1) = '\n';
-    }
+        {
+            // Linie 2
+            *(buffer + START_ADDRESS_LINE02) = '|';
+            *(buffer + START_ADDRESS_LINE02 + SIGN_PER_LINE - 2) = '|';
+            *(buffer + START_ADDRESS_LINE02 + SIGN_PER_LINE - 1) = '\n';
+        }
 
-    {
-        // line 3
-        memcpy(buffer + START_ADDRESS_LINE03, buffer + START_ADDRESS_LINE01, SIGN_PER_LINE - 1);
+        {
+            // Linie 3
+            memcpy(buffer + START_ADDRESS_LINE03, buffer + START_ADDRESS_LINE01, SIGN_PER_LINE - 1);
+        }
+        {
+            const int length = strlen(argv[1]);
+            const int reallength = length > MAX_TEXT_LENGTH ? MAX_TEXT_LENGTH : length;
+            memcpy(buffer + START_OF_TEXT, argv[1], reallength);
+        }
+        cout << buffer << endl;
     }
-    {
-        const int length = strlen(argv[1]);
-        const int reallength = length > MAX_TEXT_LENGTH ? MAX_TEXT_LENGTH : length;
-        memcpy(buffer + START_OF_TEXT, argv[1], reallength);
-    }
-    cout << buffer << endl;
     delete[] buffer, buffer = nullptr;
 }
