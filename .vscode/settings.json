@@ -47,5 +47,6 @@
         "streambuf": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/markus/studium/module/prog1/05_tag_03"
 }
