@@ -62,22 +62,6 @@ jobs:
         done
         echo "::set-output name=cmake_paths::$cmake_paths"
 
-    - name: Install CMake
-      # Install CMake before running the configuration and build commands.
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y cmake
-
-    - name: Install necessary packages for CMake build (Ubuntu)
-      # Install necessary packages for the CMake build process on Ubuntu.
-      run: |
-        sudo apt-get install -y build-essential
-
-    - name: Install necessary packages for CMake build (Windows)
-      # Install necessary packages for the CMake build process on Windows.
-      run: |
-        choco install -y visualstudio2019buildtools
-
     - name: Set reusable strings
       # Turn repeated input strings (such as the build output directory) into step outputs. These step outputs can be used throughout the workflow file.
       id: strings
