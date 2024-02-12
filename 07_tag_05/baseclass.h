@@ -1,5 +1,7 @@
 #ifndef _BASECLASS_H_
 #define _BASECLASS_H_
+#include <string>
+using namespace std;
 
 class BaseClass {
 public:
@@ -10,13 +12,13 @@ public:
     ~BaseClass();
 
     // Public member functions
-    void someFunction();
+    //void someFunction();
 
 protected:
 
 private:
     // Private member variables
-    int someVariable;
+    string name;
 };
 
 #endif // BASECLASS_H
