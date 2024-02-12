@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: commandblock
+# Project: main
 # Configurations: Debug
 # =============================================================================
 
@@ -47,36 +47,36 @@ cmake_ninja_workdir = /home/markus/studium/module/prog1/07_tag_05/build/
 build astyle: phony CMakeFiles/astyle
 
 # =============================================================================
-# Object build statements for EXECUTABLE target commandblock
+# Object build statements for EXECUTABLE target main
 
 
 #############################################
-# Order-only phony target for commandblock
+# Order-only phony target for main
 
-build cmake_object_order_depends_target_commandblock: phony || CMakeFiles/commandblock.dir
+build cmake_object_order_depends_target_main: phony || CMakeFiles/main.dir
 
-build CMakeFiles/commandblock.dir/main.cpp.o: CXX_COMPILER__commandblock_Debug /home/markus/studium/module/prog1/07_tag_05/main.cpp || cmake_object_order_depends_target_commandblock
-  DEP_FILE = CMakeFiles/commandblock.dir/main.cpp.o.d
+build CMakeFiles/main.dir/main.cpp.o: CXX_COMPILER__main_Debug /home/markus/studium/module/prog1/07_tag_05/main.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles/main.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++20
   INCLUDES = -I/home/markus/studium/module/prog1/07_tag_05
-  OBJECT_DIR = CMakeFiles/commandblock.dir
-  OBJECT_FILE_DIR = CMakeFiles/commandblock.dir
+  OBJECT_DIR = CMakeFiles/main.dir
+  OBJECT_FILE_DIR = CMakeFiles/main.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target commandblock
+# Link build statements for EXECUTABLE target main
 
 
 #############################################
-# Link the executable commandblock
+# Link the executable main
 
-build commandblock: CXX_EXECUTABLE_LINKER__commandblock_Debug CMakeFiles/commandblock.dir/main.cpp.o
+build main: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.cpp.o
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles/commandblock.dir
+  OBJECT_DIR = CMakeFiles/main.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = commandblock
-  TARGET_PDB = commandblock.dbg
+  TARGET_FILE = main
+  TARGET_PDB = main.dbg
 
 
 #############################################
@@ -119,7 +119,7 @@ build CMakeFiles/astyle | ${cmake_ninja_workdir}CMakeFiles/astyle: CUSTOM_COMMAN
 #############################################
 # Folder: /home/markus/studium/module/prog1/07_tag_05/build
 
-build all: phony commandblock
+build all: phony main
 
 # =============================================================================
 # Built-in targets

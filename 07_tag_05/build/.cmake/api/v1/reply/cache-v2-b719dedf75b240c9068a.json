@@ -819,7 +819,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "commandblock"
+			"value" : "main"
 		},
 		{
 			"name" : "CMAKE_PROJECT_VERSION",
@@ -1187,6 +1187,42 @@
 		},
 		{
 			"name" : "commandblock_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/markus/studium/module/prog1/07_tag_05"
+		},
+		{
+			"name" : "main_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/markus/studium/module/prog1/07_tag_05/build"
+		},
+		{
+			"name" : "main_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "main_SOURCE_DIR",
 			"properties" : 
 			[
 				{

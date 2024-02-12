@@ -1,0 +1,22 @@
+/*
+#include <iostream>
+using namespace std;
+#include <hello.h>
+
+#define Mul(a) a*a
+//const char * const HELLOTEXT =;
+
+#define Format(var) var# << "=\'" << var << '\''
+
+
+int main(int argc, char const *argv[])
+{
+    int autotype = 123;
+    // Ausgabe: "Multiplikation: 4+4*4+4"
+    cout << "Multiplikation a*a =" << Mul(4+4) << endl; 
+    //cout << HELLOTEXT << endl;
+    cout  << "i=" << autotype << endl;
+    cout << Format(i) << endl; 
+    return 0;
+}
+*/

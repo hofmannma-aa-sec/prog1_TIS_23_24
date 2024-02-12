@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # Set some basic project attributes
-project (commandblock
+project (main
 	VERSION 1.0
 	DESCRIPTION "Eine Applikation die die Applikation Test erstellt")
 

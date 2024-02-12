@@ -28,7 +28,7 @@
 					[
 						0
 					],
-					"name" : "commandblock",
+					"name" : "main",
 					"targetIndexes" : 
 					[
 						0,
@@ -47,9 +47,9 @@
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "commandblock::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-commandblock-Debug-d9b4dd84a81a4d1877cd.json",
-					"name" : "commandblock",
+					"id" : "main::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-main-Debug-cef465f66626d384cc4d.json",
+					"name" : "main",
 					"projectIndex" : 0
 				}
 			]

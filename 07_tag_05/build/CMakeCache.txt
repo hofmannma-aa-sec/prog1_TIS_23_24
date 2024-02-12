@@ -141,7 +141,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=Eine Applikation die die Applikation Test erste
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=commandblock
+CMAKE_PROJECT_NAME:STATIC=main
 
 //Value Computed by CMake
 CMAKE_PROJECT_VERSION:STATIC=1.0
@@ -228,6 +228,15 @@ commandblock_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 commandblock_SOURCE_DIR:STATIC=/home/markus/studium/module/prog1/07_tag_05
+
+//Value Computed by CMake
+main_BINARY_DIR:STATIC=/home/markus/studium/module/prog1/07_tag_05/build
+
+//Value Computed by CMake
+main_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+main_SOURCE_DIR:STATIC=/home/markus/studium/module/prog1/07_tag_05
 
 
 ########################

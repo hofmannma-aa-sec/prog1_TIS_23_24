@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "commandblock"
+			"path" : "main"
 		}
 	],
 	"backtrace" : 1,
@@ -70,7 +70,7 @@
 			]
 		}
 	],
-	"id" : "commandblock::@6890427a1f51a3e7e1df",
+	"id" : "main::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -86,8 +86,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "commandblock",
-	"nameOnDisk" : "commandblock",
+	"name" : "main",
+	"nameOnDisk" : "main",
 	"paths" : 
 	{
 		"build" : ".",
