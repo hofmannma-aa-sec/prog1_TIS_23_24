@@ -1,0 +1,4 @@
+/home/markus/studium/module/prog1/07_tag_05/build/CMakeFiles/astyle.dir
+/home/markus/studium/module/prog1/07_tag_05/build/CMakeFiles/commandblock.dir
+/home/markus/studium/module/prog1/07_tag_05/build/CMakeFiles/edit_cache.dir
+/home/markus/studium/module/prog1/07_tag_05/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,40 @@
+
+Einheit 17: PräprozessorLektion
+Theorie:
+
+#include
+#define
+#IF #ELSEIF #ENDIF
+Sonderelemente #error, __line__, __WIN32
+Praxis:
+
+Unterschiedliche Kompilate dank Präprozessor
+Einheit 18: STL Teil 1Lektion
+Theorie:
+
+Übersicht über die STL
+Streams
+Container
+Mathematik
+Pointer
+Thread / Multithreading
+Advanced Strings
+Praxis: keine
+
+Einheit 19: STL Teil 2Lektion
+Theorie:
+
+cTime Library angeschaut
+Uhrzeiten
+Landesspezifische Formatierung
+Sonderanwendung Initialisierung von seed.
+Praxis:
+
+Programm: Wann krachts bei 32-Bit Zeit ab 1970?
+Einheit 20: STL StringbearbeitungLektion
+Theorie:
+
+cString vs string
+Praxis:
+
+Programmierbeispiel mit Textmanipulation

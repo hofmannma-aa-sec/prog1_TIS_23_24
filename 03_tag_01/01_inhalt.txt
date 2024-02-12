@@ -1,0 +1,44 @@
+Einheit 1: Einführung in C++Lektion
+Theorie: 
+
+Geschichte der Programmierung
+Geschichte von C++
+Grundlegende Unterschiede zwischen Interpreter- und Compilersprachen
+Praxis:
+
+Entwicklungsumgebung in Betrieb nehmen
+Hello World in C und in C++ (Unterschiede)
+
+
+Einheit 2: Erste SchritteLektion
+Theorie:
+
+Struktur eines C++ Programmes am Beispiel Hello World
+Vom Code zum Programm
+Ablauf (Compiler, Linker)
+Compile-Optionen (z.B. Assemblieren -S)
+Linker-Optionen 
+Praxis:
+
+Wiederholung am eigenen Rechner am Beispiel Hello World
+Einheit 3: Variablen und DatentypenLektion
+Theorie:
+
+Datentypen in C++
+Primitivdatentypen
+Strings (char*)
+Variablendeklaration
+Praxis:
+
+Erstellen von Variablen
+Datentypen verwenden
+Einheit 4: Array, Pointer, ReferenceLektion
+Theorie:
+
+eindimensionales Primitv-Array (int array[5] = {1, 2, 3, 4, 5};)
+Strings nach ASCII-Tabelle
+Wandlung von Strings nach Arrays und umgekehrt
+Pointer (Deklaration und Benutzung)
+Praxis:
+
+Übungsaufgabe Text in der Konsole mit Steuerinformationen einfärben

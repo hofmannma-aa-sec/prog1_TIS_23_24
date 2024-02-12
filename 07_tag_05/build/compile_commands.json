@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/markus/studium/module/prog1/07_tag_05/build",
+  "command": "/usr/bin/g++ -I/home/markus/studium/module/prog1/07_tag_05 -g -std=gnu++20 -o CMakeFiles/commandblock.dir/main.cpp.o -c /home/markus/studium/module/prog1/07_tag_05/main.cpp",
+  "file": "/home/markus/studium/module/prog1/07_tag_05/main.cpp"
+}
+]

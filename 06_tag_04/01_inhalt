@@ -1,0 +1,40 @@
+
+Einheit 13: Komplexe DatentypenLektion
+Theorie:
+
+struct
+union
+Bitfeld
+#pragma pack X
+typedef
+Praxis:
+
+Benutzung von Strukturen
+Einheit 14: Casts und Zeiger auf FunktionenLektion
+Theorie:
+
+Cast in C und C++
+Pointer/Referenz auf Variable
+Pointer auf Funktion
+Praxis:
+
+Programmierbeispiel mit Funktionszeiger
+Einheit 15: Dynamische SpeicherallokationLektion
+Theorie:
+
+new und delete
+malloc
+Allokierung von Arrays
+sizeof
+Praxis:
+
+Programmierbeispiel mit Speicherallokation 
+Einheit 16: Arbeiten mit DateienLektion
+Theorie:
+
+Textdatei
+Binärdatei
+Sonderfall Konsole als Datei
+Praxis:
+
+Schreiben und Lesen einer Binärdatei

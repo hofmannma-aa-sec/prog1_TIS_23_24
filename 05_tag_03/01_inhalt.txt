@@ -1,0 +1,32 @@
+Einheit 9: Bedingungen Teil 2Lektion
+Theorie:
+
+Switch Case Break
+?-Operator
+Praxis:
+
+Übungen mit einem Zustandsautomaten
+Einheit 10: SchleifenLektion
+Theorie:
+
+For, While und Do-While
+Break / Continue
+Praxis:
+
+Verwendung von Schleifen
+Einheit 11: Einführung in FunktionenLektion
+Theorie:
+
+Funktionsdefinition
+Funktionsdeklaration
+Praxis:
+
+Schreiben und Aufrufen von Funktionen
+Einheit 12: Parameter und RückgabewerteLektion
+Theorie:
+
+Parameter und Rückgabewerte
+Sichtbarkeit und Lebensdauer
+Praxis:
+
+Verwendung von Parametern und Rückgabewerten

@@ -1,0 +1,43 @@
+
+Einheit 5: SpeicherLektion
+Theorie:
+
+von Neumann / Harvard Architektur
+Stack / Heap
+Speicherallokation und -zugriff
+Sichtbarkeit und Lebensdauer von Variablen
+Praxis:
+
+Programm mit Stack-Variablen und Heap-Variablen
+Vergleich der Lebensdauer
+
+
+Einheit 6: Operatoren und AusdrückeLektion
+Theorie:
+
+Arithmetische Operatoren
+Zuweisungsoperatoren
+Binärdarstellung von Zahlen (Addition, Subtraktion)
+Praxis:
+
+Verwendung von Operatoren an Beispielprogrammen
+Addition einer negativen Zahl 
+
+
+Einheit 7: BedingungenLektion
+Theorie:
+
+If-Else Anweisungen 
+Einfache Logikoperatoren (&&, ||, !)
+Praxis:
+
+Schreiben von bedingten Anweisungen
+Einheit 8: Logik und VergleichLektion
+Theorie:
+
+Logische Operatoren
+Verleichsoperatoren
+Binäroperatoren
+Praxis:
+
+Übung mit Operatoren
